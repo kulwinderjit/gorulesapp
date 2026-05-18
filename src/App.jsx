@@ -178,8 +178,8 @@ export default function App() {
 
     try {
       const body = JSON.stringify({
-        data: dataFile.parsed,
-        ruleset: rulesetFile.parsed,
+        data: JSON.stringify(dataFile.parsed),
+        ruleset: JSON.stringify(rulesetFile.parsed),
       })
 
       const res = await fetch(apiUrl, {
