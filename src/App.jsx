@@ -236,7 +236,7 @@ export default function App() {
                 <span>G</span><span>R</span>
               </div>
               <div>
-                <div className="logo-title">GoRules Validator</div>
+                <div className="logo-title">Brookfield Deals Validator</div>
                 <div className="logo-sub">Decision Engine · REST Client</div>
               </div>
             </div>
@@ -424,8 +424,7 @@ const CSS = `
     border-bottom: 1px solid #333;
   }
   .header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
     padding: 16px 28px;
   }
   .logo { display: flex; align-items: center; gap: 14px; }
@@ -451,8 +450,7 @@ const CSS = `
 
   /* ── Main ── */
   .main {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
     padding: 32px 28px;
     display: flex;
     flex-direction: column;
@@ -467,6 +465,7 @@ const CSS = `
     box-shadow: var(--shadow);
     overflow: hidden;
   }
+  .results-panel { overflow: visible; }
   .panel-header {
     display: flex;
     align-items: flex-start;
@@ -620,7 +619,7 @@ const CSS = `
   }
 
   /* ── Table ── */
-  .table-scroll { overflow-x: auto; padding: 0; }
+  .table-scroll { overflow-x: auto; overflow-y: auto; max-height: 60vh; padding: 0; position: relative; }
   .results-table {
     width: 100%; border-collapse: collapse;
     font-size: 13px; min-width: 400px;
@@ -634,7 +633,8 @@ const CSS = `
     background: #faf9f6;
     border-bottom: 1.5px solid var(--border);
     white-space: nowrap;
-    position: sticky; top: 0;
+    position: sticky; top: 0; z-index: 2;
+    box-shadow: 0 1px 0 var(--border);
   }
   .results-table tbody td {
     padding: 10px 16px;
